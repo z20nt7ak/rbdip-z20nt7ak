@@ -2,6 +2,9 @@ package com.rbdip.bookstore.order;
 
 import java.util.List;
 import java.util.Map;
+
+import com.rbdip.bookstore.order.service.OrderService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +28,7 @@ public class OrderController {
 
     @PostMapping("/orders")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, Object> createOrder(@RequestBody CreateOrderRequest request) {
+    public Map<String, Object> createOrder(@Valid @RequestBody CreateOrderRequest request) {
         Order order = orderService.createOrder(request);
         return Map.of("id", order.getId(), "status", order.getStatus());
     }

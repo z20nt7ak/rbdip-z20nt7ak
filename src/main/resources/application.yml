@@ -2,7 +2,7 @@ spring:
   application:
     name: rbdip-bookstore
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/bookstore}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/bookstore}
     username: ${SPRING_DATASOURCE_USERNAME:bookstore}
     password: ${SPRING_DATASOURCE_PASSWORD:bookstore}
   jpa:
